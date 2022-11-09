@@ -80,7 +80,6 @@ const PanelDemo = () => {
                                     </span>
                                 </SplitterPanel>
                                 <SplitterPanel size={30} minSize={20}>
-                                    {/* <MenuDemo /> */}
                                     <ListBoxDemo loadData={loadSavedData} ref={saveQueryRef} />
                                 </SplitterPanel>
                             </Splitter>
