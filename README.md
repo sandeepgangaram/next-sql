@@ -3,9 +3,10 @@
 ### A [SQL Playground](https://next-sql-sandev.netlify.app/) for Data Professionals
 
 Deployments:
-[https://next-sql-sandev.vercel.app/](https://next-sql-sandev.vercel.app/)
 
-[https://next-sql-sandev.netlify.app/](https://next-sql-sandev.netlify.app/)
+-   [https://next-sql-sandev.vercel.app/](https://next-sql-sandev.vercel.app/)
+
+-   [https://next-sql-sandev.netlify.app/](https://next-sql-sandev.netlify.app/)
 
 ## Features
 
