@@ -5,7 +5,7 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import ReactTooltip from 'react-tooltip';
 import { Toast } from 'primereact/toast';
 
-import OverlayDemo from '../overlay';
+import TableOverlay from '../tableOverlay';
 import ConfirmOverlay from '../confirmOverlay';
 import TableDemo from '../table';
 import SavedQueryMenu from '../listBox';
@@ -89,7 +89,7 @@ const Panel = () => {
                                 <div style={{ padding: '10px 14px 0 14px', display: 'flex', justifyContent: 'space-between' }}>
                                     <h5>Query Result</h5>
                                     <span>
-                                        <OverlayDemo resultData={resultData} />
+                                        <TableOverlay resultData={resultData} />
                                     </span>
                                 </div>
                                 <TableDemo ref={tableRef} />
