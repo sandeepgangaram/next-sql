@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { ListBox } from 'primereact/listbox';
 import { Button } from 'primereact/button';
 import { Badge } from 'primereact/badge';
@@ -11,6 +11,11 @@ const initialQueries = [
 ];
 const SavedQueryMenu = forwardRef(({ loadData }, ref) => {
     const [queries, setQueries] = useState(initialQueries);
+    const [showTooltip, setShowTooltip] = useState(false);
+
+    useEffect(() => {
+        setShowTooltip(true);
+    }, []);
 
     useImperativeHandle(ref, () => ({
         saveQueryData(obj) {
@@ -24,7 +29,7 @@ const SavedQueryMenu = forwardRef(({ loadData }, ref) => {
                 <div data-for={option.name} data-tip={option.query}>
                     <Button label={option.name} icon="pi pi-play" className="p-button-secondary p-button-outlined" style={{ width: '100%', border: 'none' }} onClick={() => loadData(option)} />
                 </div>
-                <ReactTooltip id={option.name} />
+                {showTooltip && <ReactTooltip id={option.name} />}
             </>
         );
     };

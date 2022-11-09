@@ -1,4 +1,4 @@
-import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { CarService } from '../../../data/service/CarService';
@@ -9,6 +9,11 @@ const DataTableVirtualScrollDemo = forwardRef(({ data }, ref) => {
     const dt = useRef(null);
     const carService = new CarService();
     const [cars, setCars] = useState(data || []);
+    const [showTooltip, setShowTooltip] = useState(false);
+
+    useEffect(() => {
+        setShowTooltip(true);
+    }, []);
 
     useImperativeHandle(ref, () => ({
         fetchData() {
@@ -51,11 +56,11 @@ const DataTableVirtualScrollDemo = forwardRef(({ data }, ref) => {
             <div data-for="save-csv" data-tip="Download as CSV">
                 <Button type="button" icon="pi pi-file" onClick={() => exportCSV(false)} className="mr-2" />
             </div>
-            <ReactTooltip id="save-csv" />
+            {showTooltip && <ReactTooltip id="save-csv" />}
             <div data-for="save-excel" data-tip="Download as Excel Worksheet">
                 <Button type="button" icon="pi pi-file-excel" onClick={exportExcel} className="p-button-success mr-2" />
             </div>
-            <ReactTooltip id="save-excel" />
+            {showTooltip && <ReactTooltip id="save-excel" />}
         </div>
     );
 

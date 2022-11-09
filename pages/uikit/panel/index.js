@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from 'primereact/button';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { InputTextarea } from 'primereact/inputtextarea';
@@ -18,6 +18,11 @@ const Panel = () => {
     const [loading, setLoading] = useState(false);
     const [dataLoaded, setDataLoaded] = useState(false);
     const [value, setValue] = useState('');
+    const [showTooltip, setShowTooltip] = useState(false);
+
+    useEffect(() => {
+        setShowTooltip(true);
+    }, []);
 
     const showWarn = () => {
         toast.current.show({ severity: 'warn', summary: 'Oops!', detail: 'SQL Query must end with ;', life: 2000 });
@@ -74,7 +79,7 @@ const Panel = () => {
                                             <div data-for="run-query" data-tip="Run Query">
                                                 <Button icon="pi pi-play" loading={loading} onClick={onLoadingClick} />
                                             </div>
-                                            <ReactTooltip id="run-query" />
+                                            {showTooltip && <ReactTooltip id="run-query" />}
                                             {dataLoaded && <ConfirmOverlay code={value} saveQuery={saveQueryRef.current.saveQueryData} />}
                                         </span>
                                     </span>
