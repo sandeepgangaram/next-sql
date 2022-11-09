@@ -1,7 +1,7 @@
 import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { CarService } from '../../../demo/service/CarService';
+import { CarService } from '../../../data/service/CarService';
 import { Button } from 'primereact/button';
 import ReactTooltip from 'react-tooltip';
 
