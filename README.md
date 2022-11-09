@@ -16,6 +16,9 @@
 
 ### To Be Added
 
+-   Query Validation
+-   Query Autocomomplete
+-   Code Editor instead of TextArea
 -   Share Data over email/chat
 -   Auth
 -   Collaborate with others
