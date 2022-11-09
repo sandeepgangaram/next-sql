@@ -31,10 +31,10 @@ Deployed at:
 
 ## Page Load Times
 
-| Date     | Time to load  | Setup (Desktop)             |
-| -------- | ------------- | --------------------------- |
-| 9/11/22  | 915ms - 1.3s  | No Throttle, Cache Disabled |
-| Paragrap | 630ms - 1.09s | No Throttle, Cache Enabled  |
+| Date    | Time to load  | Setup (Desktop)             |
+| ------- | ------------- | --------------------------- |
+| 9/11/22 | 915ms - 1.3s  | No Throttle, Cache Disabled |
+|         | 630ms - 1.09s | No Throttle, Cache Enabled  |
 
 Measured using Chrome Dev Tools - Network Tab
 
