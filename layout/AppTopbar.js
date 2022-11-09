@@ -1,53 +1,14 @@
 import Link from 'next/link';
 import { classNames } from 'primereact/utils';
-import React, { useState, forwardRef, useContext, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
 import { LayoutContext } from './context/layoutcontext';
-import { ToggleButton } from 'primereact/togglebutton';
 import ReactTooltip from 'react-tooltip';
 
-const AppTopbar = forwardRef((ref) => {
-    const [checked, setChecked] = useState(false);
-    const { setLayoutConfig, layoutConfig, layoutState, onMenuToggle, showProfileSidebar } = useContext(LayoutContext);
+const AppTopbar = forwardRef((props, ref) => {
+    const { layoutState, onMenuToggle, showProfileSidebar } = useContext(LayoutContext);
     const menubuttonRef = useRef(null);
     const topbarmenuRef = useRef(null);
     const topbarmenubuttonRef = useRef(null);
-
-    const changeTheme = (theme, colorScheme) => {
-        const themeLink = document.getElementById('theme-css');
-        const themeHref = themeLink ? themeLink.getAttribute('href') : null;
-        const newHref = themeHref ? themeHref.replace(layoutConfig.theme, theme) : null;
-
-        replaceLink(themeLink, newHref, () => {
-            setLayoutConfig((prevState) => ({ ...prevState, theme, colorScheme }));
-        });
-    };
-    const replaceLink = (linkElement, href, onComplete) => {
-        if (!linkElement || !href) {
-            return;
-        }
-
-        const id = linkElement.getAttribute('id');
-        const cloneLinkElement = linkElement.cloneNode(true);
-
-        cloneLinkElement.setAttribute('href', href);
-        cloneLinkElement.setAttribute('id', id + '-clone');
-
-        linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
-
-        cloneLinkElement.addEventListener('load', () => {
-            linkElement.remove();
-
-            const element = document.getElementById(id); // re-check
-            element && element.remove();
-
-            cloneLinkElement.setAttribute('id', id);
-            onComplete && onComplete();
-        });
-    };
-    const toggleHandler = (e) => {
-        e.value ? changeTheme('lara-dark-indigo', 'dark') : changeTheme('lara-light-indigo', 'light');
-        setChecked(e.value);
-    };
 
     useImperativeHandle(ref, () => ({
         menubutton: menubuttonRef.current,
@@ -100,7 +61,6 @@ const AppTopbar = forwardRef((ref) => {
                         <ReactTooltip id="settings" />
                     </a>
                 </Link>
-                <ToggleButton onLabel="Light" offLabel="Dark" onIcon="pi pi-sun" offIcon="pi pi-moon" checked={checked} onChange={toggleHandler} />
             </div>
         </div>
     );
