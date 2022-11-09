@@ -4,17 +4,17 @@ import { Button } from 'primereact/button';
 import { Badge } from 'primereact/badge';
 import ReactTooltip from 'react-tooltip';
 
-const initialCountries = [
+const initialQueries = [
     { name: 'Cars Data', query: 'SELECT * FROM cars;' },
     { name: 'Bikes Data', query: 'SELECT * FROM bikes;' },
     { name: 'Trucks Data', query: 'SELECT * FROM trucks;' }
 ];
-const ListBoxDemo = forwardRef(({ loadData }, ref) => {
-    const [countries, setCountries] = useState(initialCountries);
+const ListBox = forwardRef(({ loadData }, ref) => {
+    const [queries, setQueries] = useState(initialQueries);
 
     useImperativeHandle(ref, () => ({
         saveQueryData(obj) {
-            setCountries([obj, ...countries]);
+            setQueries([obj, ...queries]);
         }
     }));
 
@@ -39,4 +39,4 @@ const ListBoxDemo = forwardRef(({ loadData }, ref) => {
     );
 });
 
-export default ListBoxDemo;
+export default ListBox;
