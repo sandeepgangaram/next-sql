@@ -5,7 +5,6 @@ import ReactTooltip from 'react-tooltip';
 import DataTableVirtualScrollDemo from '../table';
 
 const OverlayDemo = ({ resultData }) => {
-    console.log(resultData);
     const [visibleFullScreen, setVisibleFullScreen] = useState(false);
 
     return (
