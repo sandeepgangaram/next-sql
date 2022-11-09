@@ -9,6 +9,11 @@ const AppTopbar = forwardRef((props, ref) => {
     const menubuttonRef = useRef(null);
     const topbarmenuRef = useRef(null);
     const topbarmenubuttonRef = useRef(null);
+    const [showTooltip, setShowTooltip] = useState(false);
+
+    useEffect(() => {
+        setShowTooltip(true);
+    }, []);
 
     useImperativeHandle(ref, () => ({
         menubutton: menubuttonRef.current,
@@ -31,7 +36,7 @@ const AppTopbar = forwardRef((props, ref) => {
                     <i className="pi pi-bars" />
                 </button>
             </div>
-            <ReactTooltip id="toggle-menu" />
+            {showTooltip && <ReactTooltip id="toggle-menu" />}
 
             <button ref={topbarmenubuttonRef} type="button" className="p-link layout-topbar-menu-button layout-topbar-button" onClick={showProfileSidebar}>
                 <i className="pi pi-ellipsis-v" />
@@ -46,7 +51,7 @@ const AppTopbar = forwardRef((props, ref) => {
                                 <span>Profile</span>
                             </button>
                         </div>
-                        <ReactTooltip id="profile" />
+                        {showTooltip && <ReactTooltip id="profile" />}
                     </a>
                 </Link>
 
@@ -58,7 +63,7 @@ const AppTopbar = forwardRef((props, ref) => {
                                 <span>Settings</span>
                             </button>
                         </div>
-                        <ReactTooltip id="settings" />
+                        {showTooltip && <ReactTooltip id="settings" />}
                     </a>
                 </Link>
             </div>
