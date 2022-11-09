@@ -1,4 +1,6 @@
-# [NeXTSQL](https://next-sql-sandev.netlify.app/) ### A SQL Playground for Data Professionals
+# [NeXTSQL](https://next-sql-sandev.netlify.app/)
+
+### A [SQL Playground](https://next-sql-sandev.netlify.app/) for Data Professionals
 
 ## Features
 
