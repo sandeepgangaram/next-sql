@@ -9,7 +9,7 @@ const initialQueries = [
     { name: 'Bikes Data', query: 'SELECT * FROM bikes;' },
     { name: 'Trucks Data', query: 'SELECT * FROM trucks;' }
 ];
-const ListBox = forwardRef(({ loadData }, ref) => {
+const SavedQueryMenu = forwardRef(({ loadData }, ref) => {
     const [queries, setQueries] = useState(initialQueries);
 
     useImperativeHandle(ref, () => ({
@@ -32,11 +32,11 @@ const ListBox = forwardRef(({ loadData }, ref) => {
     return (
         <div className="card" style={{ padding: '8px 0 0 0' }}>
             <h5 style={{ padding: '2px 0 0 12px' }}>
-                All Queries <Badge value={countries.length} />
+                All Queries <Badge value={queries.length} />
             </h5>
-            <ListBox options={countries} onChange={() => {}} multiple filter optionLabel="name" itemTemplate={countryTemplate} style={{ width: '100%' }} listStyle={{ maxHeight: '125px' }} />
+            <ListBox options={queries} onChange={() => {}} multiple filter optionLabel="name" itemTemplate={countryTemplate} style={{ width: '100%' }} listStyle={{ maxHeight: '125px' }} />
         </div>
     );
 });
 
-export default ListBox;
+export default SavedQueryMenu;

@@ -6,11 +6,11 @@ import ReactTooltip from 'react-tooltip';
 import { Toast } from 'primereact/toast';
 
 import OverlayDemo from '../overlay';
-import ListBoxDemo from '../listBox';
 import ConfirmOverlay from '../confirmOverlay';
 import TableDemo from '../table';
+import SavedQueryMenu from '../listBox';
 
-const PanelDemo = () => {
+const Panel = () => {
     const toast = useRef();
     const tableRef = useRef();
     const saveQueryRef = useRef();
@@ -80,7 +80,7 @@ const PanelDemo = () => {
                                     </span>
                                 </SplitterPanel>
                                 <SplitterPanel size={30} minSize={20}>
-                                    <ListBoxDemo loadData={loadSavedData} ref={saveQueryRef} />
+                                    <SavedQueryMenu loadData={loadSavedData} ref={saveQueryRef} />
                                 </SplitterPanel>
                             </Splitter>
                         </SplitterPanel>
@@ -102,4 +102,4 @@ const PanelDemo = () => {
     );
 };
 
-export default PanelDemo;
+export default Panel;
