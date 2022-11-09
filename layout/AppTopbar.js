@@ -5,9 +5,9 @@ import { LayoutContext } from './context/layoutcontext';
 import { ToggleButton } from 'primereact/togglebutton';
 import ReactTooltip from 'react-tooltip';
 
-const AppTopbar = forwardRef((props, ref) => {
+const AppTopbar = forwardRef((ref) => {
     const [checked, setChecked] = useState(false);
-    const { setLayoutConfig, setLayoutState, layoutConfig, layoutState, onMenuToggle, showProfileSidebar } = useContext(LayoutContext);
+    const { setLayoutConfig, layoutConfig, layoutState, onMenuToggle, showProfileSidebar } = useContext(LayoutContext);
     const menubuttonRef = useRef(null);
     const topbarmenuRef = useRef(null);
     const topbarmenubuttonRef = useRef(null);
@@ -100,9 +100,6 @@ const AppTopbar = forwardRef((props, ref) => {
                         <ReactTooltip id="settings" />
                     </a>
                 </Link>
-                {/* <InputSwitch checked={layoutConfig.ripple} onChange={(e) => changeRipple(e)}>
-                    okoko
-                </InputSwitch> */}
                 <ToggleButton onLabel="Light" offLabel="Dark" onIcon="pi pi-sun" offIcon="pi pi-moon" checked={checked} onChange={toggleHandler} />
             </div>
         </div>
