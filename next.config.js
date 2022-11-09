@@ -2,10 +2,9 @@
 const nextConfig = {
     reactStrictMode: false,
     trailingSlash: true,
-    basePath: process.env.NODE_ENV === 'production' ? '/sakai-react' : '',
+    basePath: process.env.NODE_ENV === 'production' ? '' : '',
     publicRuntimeConfig: {
-        contextPath: process.env.NODE_ENV === 'production' ? '/sakai-react' : '',
-        uploadPath: process.env.NODE_ENV === 'production' ? '/sakai-react/upload.php' : '/api/upload'
+        contextPath: process.env.NODE_ENV === 'production' ? '' : ''
     }
 };
 

@@ -236,30 +236,6 @@ const ChartDemo = () => {
                     <Chart type="bar" data={data.barData} options={options.barOptions}></Chart>
                 </div>
             </div>
-            <div className="col-12 xl:col-6">
-                <div className="card flex flex-column align-items-center">
-                    <h5 className="text-left w-full">Pie Chart</h5>
-                    <Chart type="pie" data={data.pieData} options={options.pieOptions}></Chart>
-                </div>
-            </div>
-            <div className="col-12 xl:col-6">
-                <div className="card flex flex-column align-items-center">
-                    <h5 className="text-left w-full">Doughnut Chart</h5>
-                    <Chart type="doughnut" data={data.pieData} options={options.pieOptions}></Chart>
-                </div>
-            </div>
-            <div className="col-12 xl:col-6">
-                <div className="card flex flex-column align-items-center">
-                    <h5 className="text-left w-full">Polar Area Chart</h5>
-                    <Chart type="polarArea" data={data.polarData} options={options.polarOptions}></Chart>
-                </div>
-            </div>
-            <div className="col-12 xl:col-6">
-                <div className="card flex flex-column align-items-center">
-                    <h5 className="text-left w-full">Radar Chart</h5>
-                    <Chart type="radar" data={data.radarData} options={options.radarOptions}></Chart>
-                </div>
-            </div>
         </div>
     );
 };
