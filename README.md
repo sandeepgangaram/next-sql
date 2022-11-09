@@ -1,12 +1,10 @@
 # [NeXTSQL](https://next-sql-sandev.vercel.app/)
 
-### A [SQL Playground](https://next-sql-sandev.netlify.app/) for Data Professionals
+### A SQL Playground for Data Professionals
 
-Deployments:
+Deployed at:
 
 -   [https://next-sql-sandev.vercel.app/](https://next-sql-sandev.vercel.app/)
-
--   [https://next-sql-sandev.netlify.app/](https://next-sql-sandev.netlify.app/)
 
 ## Features
 
@@ -30,6 +28,15 @@ Deployments:
 -   Collaborate with others
 -   Clean/Modify on Data on UI before Download/Share
 -   ...
+
+## Page Load Times
+
+| Date     | Time to load  | Setup (Desktop)             |
+| -------- | ------------- | --------------------------- |
+| 9/11/22  | 915ms - 1.3s  | No Throttle, Cache Disabled |
+| Paragrap | 630ms - 1.09s | No Throttle, Cache Enabled  |
+
+Measured using Chrome Dev Tools - Network Tab
 
 ## Getting Started
 
