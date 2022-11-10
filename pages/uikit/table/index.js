@@ -4,6 +4,7 @@ import { Column } from 'primereact/column';
 import { CarService } from '../../../data/service/CarService';
 import { Button } from 'primereact/button';
 import ReactTooltip from 'react-tooltip';
+import { CSVLink, CSVDownload } from 'react-csv';
 
 const toTitleCase = (str) => str[0].toUpperCase() + str.slice(1);
 
@@ -27,8 +28,8 @@ const Table = forwardRef(({ data }, ref) => {
         }
     }));
 
-    const exportCSV = () => {
-        dt.current.exportCSV({});
+    const exportCSV = (sel) => {
+        dt.current.exportCSV({ sel });
     };
 
     const exportExcel = () => {
@@ -57,7 +58,9 @@ const Table = forwardRef(({ data }, ref) => {
     const header = (
         <div className="flex align-items-center export-buttons" style={{ justifyContent: 'flex-end', paddingBottom: '8px' }}>
             <div data-for="save-csv" data-tip="Download as CSV">
-                <Button type="button" icon="pi pi-file" onClick={() => exportCSV(false)} className="mr-2" />
+                <CSVLink data={cars} filename={`data_${new Date().getTime()}.csv`}>
+                    <Button type="button" icon="pi pi-file" className="mr-2" />
+                </CSVLink>
             </div>
             {showTooltip && <ReactTooltip id="save-csv" />}
             <div data-for="save-excel" data-tip="Download as Excel Worksheet">
