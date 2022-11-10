@@ -6,6 +6,8 @@ Deployed at:
 
 -   [https://next-sql-sandev.vercel.app/](https://next-sql-sandev.vercel.app/)
 
+NOTE: This application is Frontend only App as of now and doesn't talk to any database/server yet. It generates Dummy data for now.
+
 ## Features
 
 ### Current
