@@ -9,8 +9,18 @@ export class CarService {
             vin: this.generateVin(),
             brand: this.generateBrand(),
             color: this.generateColor(),
-            year: this.generateYear()
+            year: this.generateYear(),
+            rating: this.generateRating(),
+            availabile: this.generateActive()
         };
+    }
+    generateRating() {
+        return (Math.random() * 3 + 2).toFixed(2);
+    }
+
+    generateActive() {
+        const options = ['Yes', 'No', 'Unknown'];
+        return options[Math.floor(Math.random() * options.length)];
     }
 
     generateVin() {

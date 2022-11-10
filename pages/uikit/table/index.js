@@ -5,11 +5,14 @@ import { CarService } from '../../../data/service/CarService';
 import { Button } from 'primereact/button';
 import ReactTooltip from 'react-tooltip';
 
-const DataTableVirtualScrollDemo = forwardRef(({ data }, ref) => {
+const toTitleCase = (str) => str[0].toUpperCase() + str.slice(1);
+
+const Table = forwardRef(({ data }, ref) => {
     const dt = useRef(null);
     const carService = new CarService();
     const [cars, setCars] = useState(data || []);
     const [showTooltip, setShowTooltip] = useState(false);
+    console.log(cars);
 
     useEffect(() => {
         setShowTooltip(true);
@@ -73,14 +76,9 @@ const DataTableVirtualScrollDemo = forwardRef(({ data }, ref) => {
                 </div>
                 {!!cars.length && (
                     <DataTable ref={dt} value={cars} scrollable scrollHeight="400px" virtualScrollerOptions={{ itemSize: 46 }}>
-                        {/* {cars.map((item) => (
-                        <Column key={item.id} field={item.id} header={item.id} style={{ minWidth: '200px' }}></Column>
-                    ))} */}
-                        <Column field="id" header="Id" style={{ minWidth: '200px' }}></Column>
-                        <Column field="vin" header="Vin" style={{ minWidth: '200px' }}></Column>
-                        <Column field="year" header="Year" style={{ minWidth: '200px' }}></Column>
-                        <Column field="brand" header="Brand" style={{ minWidth: '200px' }}></Column>
-                        <Column field="color" header="Color" style={{ minWidth: '200px' }}></Column>
+                        {Object.keys(cars[0]).map((item) => (
+                            <Column key={item} field={item} header={toTitleCase.bind(null, item)} style={{ minWidth: '100px' }}></Column>
+                        ))}
                     </DataTable>
                 )}
             </div>
@@ -88,4 +86,4 @@ const DataTableVirtualScrollDemo = forwardRef(({ data }, ref) => {
     );
 });
 
-export default DataTableVirtualScrollDemo;
+export default Table;
