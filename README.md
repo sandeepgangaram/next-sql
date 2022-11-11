@@ -33,12 +33,12 @@ NOTE: This application is Frontend only App as of now and doesn't talk to any da
 
 ## Page Load Times
 
-| Date    | Time to load  | Setup (Desktop)             |
-| ------- | ------------- | --------------------------- |
-| 9/11/22 | 915ms - 1.35s | No Throttle, Cache Disabled |
-|         | 630ms - 1.09s | No Throttle, Cache Enabled  |
+| FramRate | Time to load Setup (Desktop)              |
+| -------- | ----------------------------------------- |
+| 58.8fps  | 915ms - 1.35s No Throttle, Cache Disabled |
+|          | 630ms - 1.09s No Throttle, Cache Enabled  |
 
-Measured using Chrome Dev Tools - Network Tab
+Measured using Chrome Dev Tools - Network, Performance
 
 ## Getting Started
 
