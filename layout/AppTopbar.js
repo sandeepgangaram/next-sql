@@ -31,12 +31,9 @@ const AppTopbar = forwardRef((props, ref) => {
                 </a>
             </Link>
 
-            <div data-for="toggle-menu" data-tip="Toggle Menu">
-                <button ref={menubuttonRef} type="button" className="p-link layout-menu-button layout-topbar-button" onClick={onMenuToggle} style={{ marginTop: '4px' }}>
-                    <i className="pi pi-bars" />
-                </button>
-            </div>
-            {showTooltip && <ReactTooltip id="toggle-menu" />}
+            <button ref={menubuttonRef} type="button" className="p-link layout-menu-button layout-topbar-button" onClick={onMenuToggle} style={{ marginTop: '4px' }}>
+                <i className="pi pi-bars" />
+            </button>
 
             <button ref={topbarmenubuttonRef} type="button" className="p-link layout-topbar-menu-button layout-topbar-button" onClick={showProfileSidebar}>
                 <i className="pi pi-ellipsis-v" />
