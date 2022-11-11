@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from 'primereact/button';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { InputTextarea } from 'primereact/inputtextarea';
-import ReactTooltip from 'react-tooltip';
 import { Toast } from 'primereact/toast';
 
 import TableOverlay from '../tableOverlay';
@@ -18,11 +17,6 @@ const Panel = () => {
     const [loading, setLoading] = useState(false);
     const [dataLoaded, setDataLoaded] = useState(false);
     const [value, setValue] = useState('');
-    const [showTooltip, setShowTooltip] = useState(false);
-
-    useEffect(() => {
-        setShowTooltip(true);
-    }, []);
 
     const showWarn = () => {
         toast.current.show({ severity: 'warn', summary: 'Oops!', detail: 'SQL Query must end with ;', life: 2000 });
