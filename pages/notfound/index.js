@@ -1,12 +1,7 @@
-import getConfig from 'next/config';
-import { useRouter } from 'next/router';
 import React from 'react';
 import Link from 'next/link';
 
 const NotFoundPage = () => {
-    const contextPath = getConfig().publicRuntimeConfig.contextPath;
-    const router = useRouter();
-
     return (
         <div className="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
             <div className="flex flex-column align-items-center justify-content-center">

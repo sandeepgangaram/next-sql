@@ -1,5 +1,5 @@
 import React from 'react';
-import ChartDemo from '../uikit/charts';
+import ChartDemo from '../../src/components/charts';
 
 const Dashboard = () => {
     return (
