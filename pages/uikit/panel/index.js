@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from 'primereact/button';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { InputTextarea } from 'primereact/inputtextarea';
-import ReactTooltip from 'react-tooltip';
 import { Toast } from 'primereact/toast';
 
 import TableOverlay from '../tableOverlay';
@@ -76,10 +75,7 @@ const Panel = () => {
                                         <InputTextarea id="textarea" placeholder="Ex: SELECT * FROM users;" autoResize style={{ width: '100%', fontSize: '18px', border: '1px solid #777' }} rows={9} value={value} onChange={inputChangeHandler} />
                                         <label htmlFor="textarea">SQL Sketchpad</label>
                                         <span style={{ display: 'flex', gap: '4px', position: 'absolute', right: '14px', bottom: '16px', zIndex: '99' }}>
-                                            <div data-for="run-query" data-tip="Run Query">
-                                                <Button icon="pi pi-play" loading={loading} onClick={onLoadingClick} />
-                                            </div>
-                                            {showTooltip && <ReactTooltip id="run-query" />}
+                                            <Button icon="pi pi-play" label="Run" loading={loading} onClick={onLoadingClick} />
                                             {dataLoaded && <ConfirmOverlay code={value} saveQuery={saveQueryRef.current.saveQueryData} />}
                                         </span>
                                     </span>

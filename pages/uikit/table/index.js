@@ -3,8 +3,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { CarService } from '../../../data/service/CarService';
 import { Button } from 'primereact/button';
-import ReactTooltip from 'react-tooltip';
-import { CSVLink, CSVDownload } from 'react-csv';
+import { CSVLink } from 'react-csv';
 
 const toTitleCase = (str) => str[0].toUpperCase() + str.slice(1);
 
@@ -12,12 +11,6 @@ const Table = forwardRef(({ data }, ref) => {
     const dt = useRef(null);
     const carService = new CarService();
     const [cars, setCars] = useState(data || []);
-    const [showTooltip, setShowTooltip] = useState(false);
-    console.log(cars);
-
-    useEffect(() => {
-        setShowTooltip(true);
-    }, []);
 
     useImperativeHandle(ref, () => ({
         fetchData() {
@@ -27,10 +20,6 @@ const Table = forwardRef(({ data }, ref) => {
             return result;
         }
     }));
-
-    const exportCSV = (sel) => {
-        dt.current.exportCSV({ sel });
-    };
 
     const exportExcel = () => {
         import('xlsx').then((xlsx) => {
@@ -57,16 +46,10 @@ const Table = forwardRef(({ data }, ref) => {
 
     const header = (
         <div className="flex align-items-center export-buttons" style={{ justifyContent: 'flex-end', paddingBottom: '8px' }}>
-            <div data-for="save-csv" data-tip="Download as CSV">
-                <CSVLink data={cars} filename={`data_${new Date().getTime()}.csv`}>
-                    <Button type="button" icon="pi pi-file" className="mr-2" />
-                </CSVLink>
-            </div>
-            {showTooltip && <ReactTooltip id="save-csv" />}
-            <div data-for="save-excel" data-tip="Download as Excel Worksheet">
-                <Button type="button" icon="pi pi-file-excel" onClick={exportExcel} className="p-button-success mr-2" />
-            </div>
-            {showTooltip && <ReactTooltip id="save-excel" />}
+            <CSVLink data={cars} filename={`data_${new Date().getTime()}.csv`}>
+                <Button type="button" icon="pi pi-download" label="csv" className="mr-2" />
+            </CSVLink>
+            <Button type="button" icon="pi pi-download" label="xls" onClick={exportExcel} className="p-button-success mr-2" />
         </div>
     );
 

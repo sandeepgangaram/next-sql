@@ -4,18 +4,12 @@ import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
 import { InputText } from 'primereact/inputtext';
 import { Message } from 'primereact/message';
-import ReactTooltip from 'react-tooltip';
 
 const ConfirmOverlay = ({ code, saveQuery }) => {
     const [value, setValue] = useState('');
     const [notValid, setNotValid] = useState(false);
     const [displayBasic, setDisplayBasic] = useState(false);
     const toast = useRef(null);
-    const [showTooltip, setShowTooltip] = useState(false);
-
-    useEffect(() => {
-        setShowTooltip(true);
-    }, []);
 
     const showSuccess = (name) => {
         toast.current.show({ severity: 'success', summary: 'Perfect!', detail: `${name} added to the list.`, life: 2000 });
@@ -64,9 +58,8 @@ const ConfirmOverlay = ({ code, saveQuery }) => {
             </div>
 
             <div data-for="save-query" data-tip="Save Query">
-                <Button type="button" icon="pi pi-check" className="p-button-success" onClick={() => setDisplayBasic(true)} />
+                <Button type="button" label="Save" icon="pi pi-check" className="p-button-success" onClick={() => setDisplayBasic(true)} />
             </div>
-            {showTooltip && <ReactTooltip id="save-query" />}
         </>
     );
 };
