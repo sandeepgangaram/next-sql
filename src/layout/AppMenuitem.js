@@ -4,7 +4,7 @@ import { Ripple } from 'primereact/ripple';
 import { classNames } from 'primereact/utils';
 import React, { useEffect, useContext } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { MenuContext } from './context/menucontext';
+import { MenuContext } from '../../context/menucontext';
 
 const AppMenuitem = (props) => {
     const { activeMenu, setActiveMenu } = useContext(MenuContext);
@@ -45,10 +45,8 @@ const AppMenuitem = (props) => {
         }
 
         // toggle active state
-        if (item.items)
-            setActiveMenu(active ? props.parentKey : key);
-        else
-            setActiveMenu(key);
+        if (item.items) setActiveMenu(active ? props.parentKey : key);
+        else setActiveMenu(key);
     };
 
     const subMenu = item.items && item.visible !== false && (

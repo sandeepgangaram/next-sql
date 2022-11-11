@@ -6,8 +6,8 @@ import { Toast } from 'primereact/toast';
 
 import TableOverlay from '../tableOverlay';
 import ConfirmOverlay from '../confirmOverlay';
-import TableDemo from '../table';
-import SavedQueryMenu from '../listBox';
+import Table from '../table';
+import ListMenuBox from '../listMenuBox';
 
 const Panel = () => {
     const toast = useRef();
@@ -76,7 +76,7 @@ const Panel = () => {
                                     </span>
                                 </SplitterPanel>
                                 <SplitterPanel size={30} minSize={20}>
-                                    <SavedQueryMenu loadData={loadSavedData} ref={saveQueryRef} />
+                                    <ListMenuBox loadData={loadSavedData} ref={saveQueryRef} />
                                 </SplitterPanel>
                             </Splitter>
                         </SplitterPanel>
@@ -88,7 +88,7 @@ const Panel = () => {
                                         <TableOverlay resultData={resultData} />
                                     </span>
                                 </div>
-                                <TableDemo ref={tableRef} />
+                                <Table ref={tableRef} />
                             </div>
                         </SplitterPanel>
                     </Splitter>

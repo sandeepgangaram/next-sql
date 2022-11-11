@@ -4,11 +4,12 @@ import { useRouter } from 'next/router';
 import { useEventListener, useUnmountEffect } from 'primereact/hooks';
 import { classNames, DomHandler } from 'primereact/utils';
 import React, { useContext, useEffect, useRef } from 'react';
+import PrimeReact from 'primereact/api';
+
 import AppFooter from './AppFooter';
 import AppSidebar from './AppSidebar';
 import AppTopbar from './AppTopbar';
-import { LayoutContext } from './context/layoutcontext';
-import PrimeReact from 'primereact/api';
+import { LayoutContext } from '../../context/layoutcontext';
 
 const Layout = (props) => {
     const { layoutConfig, layoutState, setLayoutState } = useContext(LayoutContext);
@@ -126,7 +127,6 @@ const Layout = (props) => {
                     <div className="layout-main">{props.children}</div>
                     <AppFooter />
                 </div>
-                {/* <AppConfig /> */}
                 <div className="layout-mask"></div>
             </div>
         </React.Fragment>

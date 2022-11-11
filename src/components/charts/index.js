@@ -1,6 +1,6 @@
 import { Chart } from 'primereact/chart';
 import React, { useContext, useEffect, useState } from 'react';
-import { LayoutContext } from '../../../layout/context/layoutcontext';
+import { LayoutContext } from '../../../context/layoutcontext';
 
 const ChartDemo = () => {
     const [options, setOptions] = useState({});

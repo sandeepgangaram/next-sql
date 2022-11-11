@@ -9,7 +9,7 @@ const initialQueries = [
     { name: 'Bikes Data', query: 'SELECT * FROM bikes;' },
     { name: 'Trucks Data', query: 'SELECT * FROM trucks;' }
 ];
-const SavedQueryMenu = forwardRef(({ loadData }, ref) => {
+const ListMenuBox = forwardRef(({ loadData }, ref) => {
     const [queries, setQueries] = useState(initialQueries);
     const [showTooltip, setShowTooltip] = useState(false);
 
@@ -44,4 +44,4 @@ const SavedQueryMenu = forwardRef(({ loadData }, ref) => {
     );
 });
 
-export default SavedQueryMenu;
+export default ListMenuBox;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Panel from './uikit/panel';
+import Panel from '../src/components/panel';
 
 const App = () => {
     return <Panel />;

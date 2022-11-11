@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { CarService } from '../../../data/service/CarService';
 import { Button } from 'primereact/button';
 import { CSVLink } from 'react-csv';
+import { CarService } from '../../../data/service/CarService';
 
 const toTitleCase = (str) => str[0].toUpperCase() + str.slice(1);
 
