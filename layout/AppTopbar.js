@@ -48,7 +48,7 @@ const AppTopbar = forwardRef((props, ref) => {
                                 <span>Profile</span>
                             </button>
                         </div>
-                        {showTooltip && <ReactTooltip id="profile" />}
+                        {showTooltip && <ReactTooltip id="profile" place="left" />}
                     </a>
                 </Link>
 
@@ -60,7 +60,7 @@ const AppTopbar = forwardRef((props, ref) => {
                                 <span>Settings</span>
                             </button>
                         </div>
-                        {showTooltip && <ReactTooltip id="settings" />}
+                        {showTooltip && <ReactTooltip id="settings" place="left" />}
                     </a>
                 </Link>
             </div>

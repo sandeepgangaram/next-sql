@@ -21,7 +21,7 @@ const OverlayDemo = ({ resultData }) => {
                 <div data-for="full-screen" data-tip="View Full Screen">
                     <Button type="button" icon="pi pi-th-large" className="p-button-rounded p-button-text" onClick={() => setVisibleFullScreen(true)} />
                 </div>
-                {showTooltip && <ReactTooltip id="full-screen" />}
+                {showTooltip && <ReactTooltip id="full-screen" place="left" />}
             </div>
         </>
     );
