@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from 'primereact/button';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { InputTextarea } from 'primereact/inputtextarea';
+import ReactTooltip from 'react-tooltip';
 import { Toast } from 'primereact/toast';
 
 import TableOverlay from '../tableOverlay';
@@ -67,7 +68,7 @@ const Panel = () => {
                 <div className="">
                     <Toast ref={toast} />
 
-                    <Splitter style={{ height: '70vh' }} layout="vertical" gutterSize={10}>
+                    <Splitter style={{ height: '77vh' }} layout="vertical" gutterSize={10}>
                         <SplitterPanel size={25} minSize={25}>
                             <Splitter layout="horizontal" gutterSize={10}>
                                 <SplitterPanel size={60} minSize={30} style={{ padding: '2px', position: 'relative' }}>
@@ -87,7 +88,7 @@ const Panel = () => {
                         </SplitterPanel>
                         <SplitterPanel size={70} minSize={10}>
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                <div style={{ padding: '10px 14px 0 14px', display: 'flex', justifyContent: 'space-between' }}>
+                                <div style={{ padding: '10px 24px 0 18px', display: 'flex', justifyContent: 'space-between' }}>
                                     <h5>Query Result</h5>
                                     <span>
                                         <TableOverlay resultData={resultData} />
