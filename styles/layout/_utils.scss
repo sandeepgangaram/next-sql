@@ -25,3 +25,7 @@
         top: 100px;
     }
 }
+.__react_component_tooltip{
+    transition: none !important;
+    will-change: opacity;
+}
