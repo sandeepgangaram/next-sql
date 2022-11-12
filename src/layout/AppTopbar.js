@@ -1,8 +1,9 @@
+import getConfig from 'next/config';
 import Link from 'next/link';
 import { classNames } from 'primereact/utils';
 import React, { useState, useEffect, forwardRef, useContext, useImperativeHandle, useRef } from 'react';
-import { LayoutContext } from '../../context/layoutcontext';
 import ReactTooltip from 'react-tooltip';
+import { LayoutContext } from '../../context/layoutcontext';
 
 const AppTopbar = forwardRef((props, ref) => {
     const { layoutState, onMenuToggle, showProfileSidebar } = useContext(LayoutContext);
@@ -10,7 +11,9 @@ const AppTopbar = forwardRef((props, ref) => {
     const topbarmenuRef = useRef(null);
     const topbarmenubuttonRef = useRef(null);
     const [showTooltip, setShowTooltip] = useState(false);
+    const contextPath = getConfig().publicRuntimeConfig.contextPath;
 
+    console.log(contextPath);
     useEffect(() => {
         setShowTooltip(true);
     }, []);
@@ -26,6 +29,7 @@ const AppTopbar = forwardRef((props, ref) => {
             <Link href="/">
                 <a className="layout-topbar-logo" style={{ width: 'auto' }}>
                     <>
+                        <img src={`${contextPath}/images/logo.png`} width="47.22px" height={'35px'} widt={'true'} alt="logo" />
                         <span>NeXTSQL</span>
                     </>
                 </a>
