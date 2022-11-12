@@ -40,6 +40,15 @@ NOTE: This application is Frontend only App as of now and doesn't talk to any da
 
 Measured using Chrome Dev Tools - Network, Performance
 
+## Performace Improvements Strategies
+
+-   Avoid Unnecessary Paint : Chrome Dev Tools - Performance, Layers
+    -   Removed layer collision
+    -   Traded transition for reducing re-paint
+    -   will-change property on certian elements
+-   Reduce Critical Resources (Critical Bytes) : Chrome Dev Tools used - Coverage
+    -   Removed some of the unused CSS
+
 ## Getting Started
 
 First, run the development server:
