@@ -3,6 +3,8 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { CSVLink } from 'react-csv';
+import { SplitButton } from 'primereact/splitbutton';
+import { Toast } from 'primereact/toast';
 import { CarService } from '../../../data/service/CarService';
 
 const toTitleCase = (str) => str[0].toUpperCase() + str.slice(1);
@@ -11,6 +13,24 @@ const Table = forwardRef(({ data }, ref) => {
     const dt = useRef(null);
     const carService = new CarService();
     const [cars, setCars] = useState(data || []);
+
+    const toast = useRef(null);
+    const items = [
+        {
+            label: 'CSV',
+            icon: 'pi pi-file',
+            command: () => {
+                toast.current.show({ severity: 'success', summary: 'Sent as CSV', detail: 'to checkyourmail@now.com' });
+            }
+        },
+        {
+            label: 'Excel Worksheet',
+            icon: 'pi pi-file-excel',
+            command: () => {
+                toast.current.show({ severity: 'success', summary: 'Sent as Excel Worksheet', detail: 'to checkyourmail@now.com' });
+            }
+        }
+    ];
 
     useImperativeHandle(ref, () => ({
         fetchData() {
@@ -46,15 +66,19 @@ const Table = forwardRef(({ data }, ref) => {
 
     const header = (
         <div className="flex align-items-center export-buttons" style={{ justifyContent: 'flex-end', paddingBottom: '8px' }}>
+            <SplitButton label="Mail" icon="pi pi-envelope" model={items} className="p-button-raised p-button-secondary mr-2"></SplitButton>
+
             <CSVLink data={cars} filename={`data_${new Date().getTime()}.csv`}>
-                <Button type="button" icon="pi pi-download" label="csv" className="mr-2" />
+                <Button type="button" icon="pi pi-download" label="csv" className="p-button-raised mr-2" />
             </CSVLink>
-            <Button type="button" icon="pi pi-download" label="xls" onClick={exportExcel} className="p-button-success mr-2" />
+            <Button type="button" icon="pi pi-download" label="xls" onClick={exportExcel} className="p-button-raised p-button-success mr-2" />
         </div>
     );
 
     return (
         <div>
+            <Toast ref={toast}></Toast>
+
             <div className="card">
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '4px' }}>
                     Total Rows : {cars.length}
