@@ -42,10 +42,12 @@ Measured using Chrome Dev Tools - Network, Performance
 
 ## Lighthuse Perfomance Test
 
-| FCP | 0.6s |
-| Time to Interactive | 1.1s |
-| LCP | 1.2s |
-| Performance | 97 |
+| Metric              | Value |
+| ------------------- | ----- |
+| FCP                 | 0.6s  |
+| Time to Interactive | 1.1s  |
+| LCP                 | 1.2s  |
+| Performance         | 97    |
 
 ## Performace Improvement (ongoing...)
 
