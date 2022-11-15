@@ -40,6 +40,16 @@ NOTE: This application is Frontend only App as of now and doesn't talk to any da
 
 Measured using Chrome Dev Tools - Network, Performance
 
+## Lighthuse Perfomance Test
+
+| FCP                  | 0.6s   |
+| -------------------- | ------ |
+| Time to Interactive  | 1.1s   |
+| -------------------- | ------ |
+| LCP                  | 1.2s   |
+| -------------------- | ------ |
+| Performance          | 97     |
+
 ## Performace Improvement (ongoing...)
 
 -   Avoid Unnecessary Paint : Chrome Dev Tools - Performance, Layers
