@@ -70,7 +70,7 @@ const Panel = () => {
                                         <InputTextarea id="textarea" placeholder="Ex: SELECT * FROM users;" autoResize style={{ width: '100%', fontSize: '18px', border: '1px solid #777' }} rows={9} value={value} onChange={inputChangeHandler} />
                                         <label htmlFor="textarea">SQL Sketchpad</label>
                                         <span style={{ display: 'flex', gap: '4px', position: 'absolute', right: '14px', bottom: '16px', zIndex: '99' }}>
-                                            <Button icon="pi pi-play" label="Run" loading={loading} onClick={onLoadingClick} />
+                                            <Button icon="pi pi-play" label="Run" loading={loading} onClick={onLoadingClick} className="p-button-raised" />
                                             {dataLoaded && <ConfirmOverlay code={value} saveQuery={saveQueryRef.current.saveQueryData} />}
                                         </span>
                                     </span>

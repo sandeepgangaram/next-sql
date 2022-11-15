@@ -12,7 +12,7 @@ const TableOverlay = ({ resultData }) => {
                 <Sidebar visible={visibleFullScreen} onHide={() => setVisibleFullScreen(false)} baseZIndex={1000} fullScreen>
                     <Table data={resultData} />
                 </Sidebar>
-                <Button type="button" icon="pi pi-th-large" label="Full Screen" className="p-button-rounded p-button-text" onClick={() => setVisibleFullScreen(true)} />
+                <Button type="button" icon="pi pi-table" label="View" className=" p-button-raised p-button-secondary p-button-text" onClick={() => setVisibleFullScreen(true)} />
             </div>
         </>
     );

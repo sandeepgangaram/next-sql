@@ -29,8 +29,8 @@ const ConfirmOverlay = ({ code, saveQuery }) => {
 
     const basicDialogFooter = (
         <>
-            <Button type="button" label="Nope" onClick={() => setDisplayBasic(false)} icon="pi pi-times" className="p-button-danger" />
-            <Button type="button" label="Save" onClick={saveHandler} icon="pi pi-check" className="p-button-success" />
+            <Button type="button" label="Nope" onClick={() => setDisplayBasic(false)} icon="pi pi-times" className=" p-button-raised p-button-danger" />
+            <Button type="button" label="Save" onClick={saveHandler} icon="pi pi-check" className="p-button-raised p-button-success" />
         </>
     );
 
@@ -58,7 +58,7 @@ const ConfirmOverlay = ({ code, saveQuery }) => {
             </div>
 
             <div data-for="save-query" data-tip="Save Query">
-                <Button type="button" label="Save" icon="pi pi-check" className="p-button-success" onClick={() => setDisplayBasic(true)} />
+                <Button type="button" label="Save" icon="pi pi-check" className="p-button-raised p-button-success" onClick={() => setDisplayBasic(true)} />
             </div>
         </>
     );
