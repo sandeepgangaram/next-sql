@@ -18,7 +18,8 @@ NOTE: This application is Frontend only App as of now and doesn't talk to any da
 -   Download Query Data as CSV or Excel Worksheet file.
 -   View Data Table in Fullscreen mode.
 -   Handle large datasets
--   Dashboard to see overall activity
+-   Dashboard to see overall activity (dummy)
+-   Send data as CSV or Excel file via e-mail (dummy)
 
 ### To Be Added
 
