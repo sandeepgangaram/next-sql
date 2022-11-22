@@ -80,8 +80,8 @@ const Table = forwardRef(({ data }, ref) => {
             <Toast ref={toast}></Toast>
 
             <div className="card">
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '4px' }}>
-                    Total Rows : {cars.length}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '4px', flexWrap: 'wrap' }}>
+                    <h6>Total Rows : {cars.length}</h6>
                     {header}
                 </div>
                 {!!cars.length && (
