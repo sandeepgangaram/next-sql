@@ -13,7 +13,6 @@ const AppTopbar = forwardRef((props, ref) => {
     const [showTooltip, setShowTooltip] = useState(false);
     const contextPath = getConfig().publicRuntimeConfig.contextPath;
 
-    console.log(contextPath);
     useEffect(() => {
         setShowTooltip(true);
     }, []);
