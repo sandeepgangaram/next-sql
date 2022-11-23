@@ -52,7 +52,7 @@ Measured using Chrome Dev Tools - Network, Performance
 
 ## WebPageTest Report
 
-To view the report -> [Click Here](https://www.webpagetest.org/video/compare.php?tests=221123_AiDcVT_3NS-r:2-c:0-e:filmstrip)
+To view the report : [Click Here](https://www.webpagetest.org/video/compare.php?tests=221123_AiDcVT_3NS-r:2-c:0-e:filmstrip)
 
 ## Performace Improvement (ongoing...)
 
