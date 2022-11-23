@@ -50,6 +50,10 @@ Measured using Chrome Dev Tools - Network, Performance
 | LCP                 | 1.2s  |
 | Performance         | 97    |
 
+## WebPageTest Report
+
+[WebPageTest Report](https://www.webpagetest.org/video/compare.php?tests=221123_AiDcVT_3NS-r:2-c:0-e:filmstrip)
+
 ## Performace Improvement (ongoing...)
 
 -   Avoid Unnecessary Paint : Chrome Dev Tools - Performance, Layers
