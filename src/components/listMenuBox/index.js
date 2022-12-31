@@ -39,7 +39,7 @@ const ListMenuBox = forwardRef(({ loadData }, ref) => {
             <h5 style={{ padding: '2px 0 0 12px' }}>
                 All Queries <Badge value={queries.length} />
             </h5>
-            <ListBox options={queries} onChange={() => {}} multiple filter optionLabel="name" itemTemplate={countryTemplate} style={{ width: '100%' }} listStyle={{ maxHeight: '125px' }} />
+            <ListBox options={queries} onChange={() => {}} multiple filter optionLabel="name" itemTemplate={countryTemplate} style={{ display: 'flex', flexDirection: 'column', width: '100%', minHeight: '100%' }} listStyle={{ minHeight: '100%' }} />
         </div>
     );
 });

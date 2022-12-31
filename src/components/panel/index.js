@@ -62,12 +62,12 @@ const Panel = () => {
                 <div className="">
                     <Toast ref={toast} />
 
-                    <Splitter style={{ height: '77vh' }} layout="vertical" gutterSize={10}>
-                        <SplitterPanel size={25} minSize={25}>
+                    <Splitter style={{ height: '87vh' }} layout="vertical" gutterSize={10}>
+                        <SplitterPanel size={35} minSize={35}>
                             <Splitter layout="horizontal" gutterSize={10}>
                                 <SplitterPanel size={60} minSize={30} style={{ padding: '2px', position: 'relative' }}>
                                     <span className="p-float-label">
-                                        <InputTextarea id="textarea" placeholder="Ex: SELECT * FROM users;" autoResize style={{ width: '100%', fontSize: '18px', border: '1px solid #777' }} rows={9} value={value} onChange={inputChangeHandler} />
+                                        <InputTextarea id="textarea" placeholder="Ex: SELECT * FROM users;" autoResize style={{ width: '100%', fontSize: '18px', minHeight: '100%' }} rows={12} value={value} onChange={inputChangeHandler} />
                                         <label htmlFor="textarea">SQL Sketchpad</label>
                                         <span style={{ display: 'flex', gap: '4px', position: 'absolute', right: '14px', bottom: '16px', zIndex: '99' }}>
                                             <Button icon="pi pi-play" label="Run" loading={loading} onClick={onLoadingClick} className="p-button-raised" />
@@ -80,7 +80,7 @@ const Panel = () => {
                                 </SplitterPanel>
                             </Splitter>
                         </SplitterPanel>
-                        <SplitterPanel size={70} minSize={10}>
+                        <SplitterPanel size={70} minSize={20}>
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 <div style={{ padding: '10px 24px 0 18px', display: 'flex', justifyContent: 'space-between' }}>
                                     <h5>Query Result</h5>
