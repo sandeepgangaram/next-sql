@@ -66,8 +66,16 @@ const Panel = () => {
                         <SplitterPanel size={35} minSize={35}>
                             <Splitter layout="horizontal" gutterSize={10}>
                                 <SplitterPanel size={60} minSize={30} style={{ padding: '2px', position: 'relative' }}>
-                                    <span className="p-float-label">
-                                        <InputTextarea id="textarea" placeholder="Ex: SELECT * FROM users;" autoResize style={{ width: '100%', fontSize: '18px', minHeight: '100%' }} rows={12} value={value} onChange={inputChangeHandler} />
+                                    <span className="p-float-label" style={{ minHeight: '100%' }}>
+                                        <InputTextarea
+                                            id="textarea"
+                                            placeholder="Ex: SELECT * FROM users;"
+                                            autoResize
+                                            style={{ width: '100%', border: 'none', fontSize: '18px', minHeight: '100%', height: '100% !Important' }}
+                                            rows={12}
+                                            value={value}
+                                            onChange={inputChangeHandler}
+                                        />
                                         <label htmlFor="textarea">SQL Sketchpad</label>
                                         <span style={{ display: 'flex', gap: '4px', position: 'absolute', right: '14px', bottom: '16px', zIndex: '99' }}>
                                             <Button icon="pi pi-play" label="Run" loading={loading} onClick={onLoadingClick} className="p-button-raised" />
