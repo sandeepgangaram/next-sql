@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from 'primereact/button';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { InputTextarea } from 'primereact/inputtextarea';
@@ -12,11 +12,16 @@ import ListMenuBox from '../listMenuBox';
 const Panel = () => {
     const toast = useRef();
     const tableRef = useRef();
+    const inputRef = useRef();
     const saveQueryRef = useRef();
     const [resultData, setResultData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [dataLoaded, setDataLoaded] = useState(false);
     const [value, setValue] = useState('');
+
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
 
     const showWarn = () => {
         toast.current.show({ severity: 'warn', summary: 'Oops!', detail: 'SQL Query must end with ;', life: 2000 });
@@ -68,6 +73,7 @@ const Panel = () => {
                                 <SplitterPanel size={60} minSize={30} style={{ padding: '2px', position: 'relative' }}>
                                     <span className="p-float-label" style={{ minHeight: '100%' }}>
                                         <InputTextarea
+                                            ref={inputRef}
                                             id="textarea"
                                             placeholder="Ex: SELECT * FROM users;"
                                             autoResize
